@@ -13,22 +13,116 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container ">
-      <div class=" card border-success mb-3" style="max-width: 18rem;">
-        <div class="card-header bg-transparent border-success">StopWatch</div>
-        <div class="card-body text-success">
-          <h5 class="card-title">Success card title</h5>
-          <!-- <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p> -->
-          <h1 class="face" id="min">00</h1>
-          <h1 class="face" id="sec">00</h1>
-          <h1 class="face" id="milisec">00</h1>
+    <div class="container container-sm container-md container-lg container-xl">
+      <div class="card border-success mb-3 shadow-lg p-3 mb-5 bg-white rounded">
+        <div
+          class="card-header bg-transparent border-success text-left font-italic font-weight-bolder ml-3"
+        >
+          StopWatch
         </div>
-        <div class="card-footer bg-transparent border-success">Footer</div>
+        <div class="card-body text-dark">
+          <h5 class="card-title my-4" id="userName"></h5>
+          <h1 class="face m-1" id="min">0</h1>
+          <h1 class="face m-1">:</h1>
+          <h1 class="face m-1" id="sec">0</h1>
+          <h1 class="face m-1">.</h1>
+          <h1 class="face m-1" id="milisec">0</h1>
+          <br />
+          <!-- START BUTTON -->
+          <button
+            type="button"
+            class="btn btn-warning rounded-circle m-3 my-4"
+            onclick="start()"
+          >
+            <svg
+              width="2.5em"
+              height="3em"
+              viewBox="0 0 16 16"
+              class="bi bi-play"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"
+              />
+            </svg>
+          </button>
+          <!-- PAUSE BUTTON -->
+          <button
+            type="button"
+            class="btn btn-warning rounded-circle m-3"
+            onclick="pause()"
+          >
+            <svg
+              width="2.5em"
+              height="3em"
+              viewBox="0 0 16 16"
+              class="bi bi-pause-fill"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"
+              />
+            </svg>
+          </button>
+          <!-- RESET BUTTON -->
+          <button
+            type="button"
+            class="btn btn-warning rounded-circle m-3"
+            onclick="reset()"
+          >
+            <svg
+              width="2.5em"
+              height="3em"
+              viewBox="0 0 16 16"
+              class="bi bi-arrow-counterclockwise"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12.83 6.706a5 5 0 0 0-7.103-3.16.5.5 0 1 1-.454-.892A6 6 0 1 1 2.545 5.5a.5.5 0 1 1 .91.417 5 5 0 1 0 9.375.789z"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M7.854.146a.5.5 0 0 0-.708 0l-2.5 2.5a.5.5 0 0 0 0 .708l2.5 2.5a.5.5 0 1 0 .708-.708L5.707 3 7.854.854a.5.5 0 0 0 0-.708z"
+              />
+            </svg>
+          </button>
+          <!-- LAP BUTTON -->
+          <button
+            type="button"
+            class="btn btn-warning rounded-circle m-3"
+            onclick="lap()"
+          >
+            <svg
+              width="2.5em"
+              height="3em"
+              viewBox="0 0 16 16"
+              class="bi bi-stopwatch"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 15A6 6 0 1 0 8 3a6 6 0 0 0 0 12zm0 1A7 7 0 1 0 8 2a7 7 0 0 0 0 14z"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M8 4.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4.5a.5.5 0 0 1 0-1h3V5a.5.5 0 0 1 .5-.5zM5.5.5A.5.5 0 0 1 6 0h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5z"
+              />
+              <path d="M7 1h2v2H7V1z" />
+            </svg>
+          </button>
+        </div>
+        <div class="card-footer bg-transparent border-success font-weight-bold">
+          Check It Out
+        </div>
       </div>
     </div>
+    <div class="lapTime" id="lapT"></div>
   </body>
   <script src="stopWatch.js"></script>
 </html>
